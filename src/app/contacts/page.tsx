@@ -55,6 +55,7 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
+                  
 
                   <div className="flex items-start gap-4">
                     <Phone className="h-5 w-5 mt-1 text-primary" />
