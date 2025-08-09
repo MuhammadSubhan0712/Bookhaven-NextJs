@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-
 const footerLinks = [
   {
     title: "Shop",
@@ -49,40 +48,47 @@ const Footer = () => {
 
               <div className="flex gap-4">
                 <Button variant="outline" size="icon">
-                  <Facebook className="h-4 w-4"/>
+                  <Facebook className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="icon">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Instagram className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Linkedin className="h-4 w-4" />
-              </Button>
+                  <Twitter className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon">
+                  <Instagram className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon">
+                  <Linkedin className="h-4 w-4" />
+                </Button>
               </div>
             </div>
 
-            {footerLinks.map((section)=> (
+            {footerLinks.map((section) => (
               <div key={section.title} className="space-y-4">
-               <h4 className="font-medium">{section.title}</h4>
-               <ul className="space-y-2">
-                {section.links.map((link)=> (
-                  <li key={link.name}>
-                    <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-               </ul> 
+                <h4 className="font-medium">{section.title}</h4>
+                <ul className="space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
 
           <div className="mt-12 pt-8 border-t text-sm text-muted-foreground text-center">
-            &copy; {new Date().getFullYear()} BookHaven. All rights reserved
+            &copy; {new Date().getFullYear()} BookHaven by
+            <abbr
+              className="text-transparent bg-clip-text bg-gradient-to-t from-gray-100 via-gray-950 to-gray-100 font-extrabold"
+              title="Muhammad Subhan Khan">
+              {" "}
+              M$K
+            </abbr>{" "}
+            All rights reserved
           </div>
         </div>
       </footer>
